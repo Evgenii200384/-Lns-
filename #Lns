@@ -1,0 +1,31 @@
+const web3 = new Web3(Web3.givenProvider)
+// First create a web3js provider
+
+const lineaNS = new lineaNS(web3)
+// You are now ready for .lin
+
+// Primary Address (Ethereum Address to .lin Name)
+lineaNS.primaryAddress("0xc4dc1F7CDAFd1beDc1042ea07dec4E46296a6685")
+.then(function(result){
+    console.log(result)
+    // Returns the primary address registered to this address.
+})
+
+// Resolve Address (.lin Name to Ethereum Address) lineaNS.resolveAddress("jack.lin").then(function(result){
+    console.log(result)
+    // Returns the resolved ethereum address of the .lin name.
+})
+
+lineaNS.getData("jack.lin","data_type").then(function(result){
+    console.log(result)
+    // For example, if you enter twitter in the data_type part, the result will be twitter account name.
+})
+
+lineaNS.register("name.lin","REFERRAL_ADDRESS","YOUR_ETH_ADDRESS","3000000000000000")
+.then(function(result){
+if (result['status']) {
+    // Registration Successful
+} else {
+    // Registration Failed
+}
+});
